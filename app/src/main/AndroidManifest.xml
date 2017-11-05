@@ -18,10 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".drinking_class" android:parentActivityName=".MainActivity">
+    <activity android:name=".drinking_class" android:parentActivityName=".MainActivity">
 
 
-        </activity>
+    </activity>
+    <activity android:name=".stat_class" android:parentActivityName=".MainActivity">
+
+
+    </activity>
         <receiver android:name=".nr" android:exported="false">
             <intent-filter>
                 <action android:name="nr"/>

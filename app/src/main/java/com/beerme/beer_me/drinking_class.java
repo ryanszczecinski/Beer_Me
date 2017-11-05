@@ -55,6 +55,11 @@ public class drinking_class extends AppCompatActivity {
         iv.setVisibility(View.INVISIBLE);
         nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
 
+        View beerMe = (Button)findViewById(R.id.button4);
+        View crap = (Button)findViewById(R.id.crap);
+        beerMe.setEnabled(false);
+        crap.setEnabled(false);
+
 
                        }
 
@@ -94,6 +99,14 @@ public class drinking_class extends AppCompatActivity {
     }
     public void letsStart(View v){
       //
+
+
+        _drinks = 0;
+        _textView.setText((_drinks) + "");
+        View beerMe = (Button)findViewById(R.id.button4);
+        View crap = (Button)findViewById(R.id.crap);
+        beerMe.setEnabled(true);
+        crap.setEnabled(true);
 
         createNotification();
         _t = new Timer();
@@ -172,6 +185,10 @@ public class drinking_class extends AppCompatActivity {
         View passOut = (Button)findViewById(R.id.button7);
         start.setVisibility(View.VISIBLE);
         passOut.setVisibility(View.GONE);
+        View beerMe = (Button)findViewById(R.id.button4);
+        View crap = (Button)findViewById(R.id.crap);
+        beerMe.setEnabled(false);
+        crap.setEnabled(false);
 
 
     }

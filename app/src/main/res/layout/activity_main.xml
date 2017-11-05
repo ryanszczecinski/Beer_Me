@@ -31,9 +31,12 @@
             android:textSize="10sp" />
 
         <Button
+            android:id="@+id/button3y821"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:elevation="0dp"
+            android:onClick="buttonOnClick2"
             android:text="stats" />
     </LinearLayout>
 

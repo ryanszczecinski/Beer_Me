@@ -117,4 +117,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
 
     }
+    public void buttonOnClick2(View v){
+
+        Button button= (Button) v;
+        Intent i = new Intent(getApplicationContext(), stat_class.class);
+        startActivity(i);
+
+    }
+
 }

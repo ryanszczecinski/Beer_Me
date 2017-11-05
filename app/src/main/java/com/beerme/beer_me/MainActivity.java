@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                         weightString = weight.getText().toString();
                 }
 
+                drinking_class.userName = nameString;
                 weightInteger = Integer.parseInt(weightString);
                 drinking_class._weight = weightInteger;
                 boolean maleChecked = checkBoxMale.isChecked();

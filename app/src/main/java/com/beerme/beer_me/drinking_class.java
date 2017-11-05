@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -26,7 +28,7 @@ import java.util.TimerTask;
 public class drinking_class extends AppCompatActivity {
     int _easterEgg;
     TextView _textView;
-    int _drinks;
+    static int _drinks;
     TextView _timer;
     int _sec;
     double _currentBAC;
@@ -39,6 +41,7 @@ public class drinking_class extends AppCompatActivity {
     Button _ls;
     NotificationManager nm;
     static final int uniqueID = 123 ;
+    static String userName;
 
 
     @Override
@@ -176,19 +179,20 @@ public class drinking_class extends AppCompatActivity {
         //  _startTime
 
     }
-    public void end (View v){
+    public void end (View v) {
         _min = 0;
         _sec = 0;
         _hours = 0;
         _t.cancel();
-        View start = (Button)findViewById(R.id.button2);
-        View passOut = (Button)findViewById(R.id.button7);
+        View start = (Button) findViewById(R.id.button2);
+        View passOut = (Button) findViewById(R.id.button7);
         start.setVisibility(View.VISIBLE);
         passOut.setVisibility(View.GONE);
-        View beerMe = (Button)findViewById(R.id.button4);
-        View crap = (Button)findViewById(R.id.crap);
+        View beerMe = (Button) findViewById(R.id.button4);
+        View crap = (Button) findViewById(R.id.crap);
         beerMe.setEnabled(false);
         crap.setEnabled(false);
+
 
 
     }

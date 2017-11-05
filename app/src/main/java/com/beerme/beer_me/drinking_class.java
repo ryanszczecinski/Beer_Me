@@ -27,6 +27,7 @@ public class drinking_class extends AppCompatActivity {
     int _min;
     boolean _started = false;
     int _hours;
+    Timer _t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,8 @@ public class drinking_class extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
          _textView = (TextView) findViewById(R.id.textView);
          _timer = (TextView) findViewById(R.id.textView2);
+        View b = (Button) findViewById(R.id.button7);
+        b.setVisibility(View.INVISIBLE);
 
 
 
@@ -71,10 +74,11 @@ public class drinking_class extends AppCompatActivity {
         }
     }
     public void letsStart(View v){
+        _t = new Timer();
         _started = true;
 
-        Timer t = new Timer();
-        t.scheduleAtFixedRate(new TimerTask() {
+
+        _t.scheduleAtFixedRate(new TimerTask() {
 
             @Override
             public void run() {
@@ -128,8 +132,23 @@ public class drinking_class extends AppCompatActivity {
             }
         }, 0, 1000);
         View start = (Button)findViewById(R.id.button2);
+        View passOut = (Button)findViewById(R.id.button7);
         start.setVisibility(View.GONE);
+        passOut.setVisibility(View.VISIBLE);
         //  _startTime
+
+    }
+    public void end (View v){
+        _min = 0;
+        _sec = 0;
+        _hours = 0;
+        _t.cancel();
+        View start = (Button)findViewById(R.id.button2);
+        View passOut = (Button)findViewById(R.id.button7);
+        start.setVisibility(View.VISIBLE);
+        passOut.setVisibility(View.GONE);
+
+
     }
 
     public void currentBAC(){

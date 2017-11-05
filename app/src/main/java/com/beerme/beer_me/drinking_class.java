@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -22,12 +24,13 @@ public class drinking_class extends AppCompatActivity {
     TextView _timer;
     int _sec;
     double _currentBAC;
-    boolean _isMale=true;
-    double _weight=200;
+    static boolean _isMale;
+    static double _weight;
     int _min;
     boolean _started = false;
     int _hours;
     Timer _t;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +42,6 @@ public class drinking_class extends AppCompatActivity {
          _timer = (TextView) findViewById(R.id.textView2);
         View b = (Button) findViewById(R.id.button7);
         b.setVisibility(View.INVISIBLE);
-
-
-
-
-
-
 
 
     }

@@ -9,6 +9,7 @@
     tools:context="com.beerme.beer_me.MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="368dp"
         android:layout_height="99dp"
         android:layout_marginBottom="8dp"
@@ -18,7 +19,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
 
 
         <Button
@@ -38,61 +38,102 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/enterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="276dp" />
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Enter Information"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editWeight" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="Name"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="61dp" />
-
-    <TextView
-        android:id="@+id/inputName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="76dp" />
-
-    <TextView
-        android:id="@+id/textViewWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Weight"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="151dp" />
-
-    <EditText
-        android:id="@+id/inputWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="138dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="@+id/editName"
+        app:layout_constraintEnd_toStartOf="@+id/editName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editName"
+        app:layout_constraintVertical_bias="0.526" />
+
+    <TextView
+        android:id="@+id/weightField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Weight"
+        app:layout_constraintBottom_toBottomOf="@+id/editWeight"
+        app:layout_constraintEnd_toStartOf="@+id/editWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editWeight" />
+
+    <EditText
+        android:id="@+id/editWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/checkBoxMale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="8dp"
         android:text="Male"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="216dp" />
+        app:layout_constraintBottom_toTopOf="@+id/enterButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editWeight" />
 
     <CheckBox
         android:id="@+id/checkBoxFemale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="Female"
-        tools:layout_editor_absoluteX="184dp"
-        tools:layout_editor_absoluteY="216dp" />
+        app:layout_constraintBottom_toTopOf="@+id/enterButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxMale"
+        app:layout_constraintTop_toBottomOf="@+id/editWeight" />
 
 </android.support.constraint.ConstraintLayout>

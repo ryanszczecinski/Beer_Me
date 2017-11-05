@@ -8,11 +8,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+
+    Button b;
+    EditText name;
+    EditText weight;
+    String nameString;
+    String weightString;
+    CheckBox checkBoxMale;
+    CheckBox checkBoxFemale;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -39,8 +49,44 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        b = (Button) findViewById(R.id.enterButton);
+        name = (EditText) findViewById(R.id.editName);
+        weight = (EditText) findViewById(R.id.editWeight);
+
+        checkBoxMale = ((CheckBox) findViewById(R.id.checkBoxMale));
+        checkBoxFemale = ((CheckBox) findViewById(R.id.checkBoxFemale));
+
+        checkBoxMale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkBoxFemale.setChecked(false);
+            }
+        });
+
+        checkBoxFemale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkBoxMale.setChecked(false);
+            }
+        });
+
+
+
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nameString = name.getText().toString();
+                weightString = weight.getText().toString();
+                int weightInteger = Integer.parseInt(weightString);
+                drinking_class._weight = weightInteger;
+                boolean maleChecked = checkBoxMale.isChecked();
+                drinking_class._isMale = maleChecked;
+            }
+        });
+
 
         mTextMessage = (TextView) findViewById(R.id.message);
+
 
     }
     public void buttonOnClick(View v){

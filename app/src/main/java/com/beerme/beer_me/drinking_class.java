@@ -81,6 +81,7 @@ public class drinking_class extends AppCompatActivity {
             bac.setText(x + "");
         }
         _easterEgg = 0;
+        createNotification();
 
     }
     public void crap(View v){
@@ -99,6 +100,7 @@ public class drinking_class extends AppCompatActivity {
             ImageView iv = (ImageView) findViewById(R.id.imageView2);
             iv.setVisibility(View.VISIBLE);
         }
+        createNotification();
     }
     public void letsStart(View v){
       //
@@ -227,7 +229,8 @@ public class drinking_class extends AppCompatActivity {
         RemoteViews remoteView = new RemoteViews(getPackageName(),R.layout.notification);
         remoteView.setOnClickPendingIntent(R.id.button10, pendingIntent);
         remoteView.setTextViewText(R.id.textView4,_drinks+"");
-        remoteView.setTextViewText(R.id.textView5,_currentBAC+"");
+        double x = Math.floor(_currentBAC*1000)/1000;        
+        remoteView.setTextViewText(R.id.textView5,x+"");
         nB.setCustomContentView(remoteView);
 
         nB.setSmallIcon(R.drawable.transparent_beer);

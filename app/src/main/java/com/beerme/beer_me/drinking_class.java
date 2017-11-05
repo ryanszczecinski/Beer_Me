@@ -1,6 +1,10 @@
 package com.beerme.beer_me;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RemoteViews;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -31,6 +36,9 @@ public class drinking_class extends AppCompatActivity {
     boolean _started = false;
     int _hours;
     Timer _t;
+    Button _ls;
+    NotificationManager nm;
+    static final int uniqueID = 123 ;
 
 
     @Override
@@ -45,9 +53,15 @@ public class drinking_class extends AppCompatActivity {
         b.setVisibility(View.INVISIBLE);
         ImageView iv = (ImageView) findViewById(R.id.imageView2);
         iv.setVisibility(View.INVISIBLE);
+        nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
 
 
-    }
+                       }
+
+
+
+
+
 
     public void beerMe (View v){
         if(_started) {
@@ -79,8 +93,15 @@ public class drinking_class extends AppCompatActivity {
         }
     }
     public void letsStart(View v){
+      //
+
+        createNotification();
         _t = new Timer();
+        View start = (Button)findViewById(R.id.button2);
+        View passOut = (Button)findViewById(R.id.button7);
         _started = true;
+
+
 
 
         _t.scheduleAtFixedRate(new TimerTask() {
@@ -136,8 +157,7 @@ public class drinking_class extends AppCompatActivity {
                 });
             }
         }, 0, 1000);
-        View start = (Button)findViewById(R.id.button2);
-        View passOut = (Button)findViewById(R.id.button7);
+
         start.setVisibility(View.GONE);
         passOut.setVisibility(View.VISIBLE);
         //  _startTime
@@ -177,4 +197,25 @@ public class drinking_class extends AppCompatActivity {
         double x = _min/60.0 + _hours;
         return x;
     }
+
+    public void createNotification(){
+        Intent intent = new Intent(this, drinking_class.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(drinking_class.this,0,intent,0);
+        Notification.Builder nB = new Notification.Builder(drinking_class.this);
+        nB.setVisibility(Notification.VISIBILITY_PUBLIC);
+        RemoteViews remoteView = new RemoteViews(getPackageName(),R.layout.notification);
+        remoteView.setOnClickPendingIntent(R.id.button10, pendingIntent);
+        remoteView.setTextViewText(R.id.textView4,_drinks+"");
+        remoteView.setTextViewText(R.id.textView5,_currentBAC+"");
+        nB.setCustomContentView(remoteView);
+
+        nB.setSmallIcon(R.drawable.transparent_beer);
+        Notification n1 = nB.build();
+
+        nm.notify(uniqueID,n1);
+    }
+    public void update(){
+
+    }
 }
+

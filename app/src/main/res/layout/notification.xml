@@ -1,0 +1,41 @@
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="62dp">
+
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="77dp"
+            android:layout_marginStart="77dp"
+            android:text="Beer Me" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="49dp"
+            android:layout_marginStart="49dp"
+            android:layout_toEndOf="@+id/button10"
+            android:layout_toRightOf="@+id/button10"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Drinks" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBaseline="@+id/textView4"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginLeft="53dp"
+            android:layout_marginStart="53dp"
+            android:layout_toEndOf="@+id/textView4"
+            android:layout_toRightOf="@+id/textView4"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="BAC" />
+    </RelativeLayout>

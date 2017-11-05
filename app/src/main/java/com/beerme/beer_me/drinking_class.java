@@ -17,6 +17,9 @@ public class drinking_class extends AppCompatActivity {
     int _drinks;
     TextView _timer;
     double _startTime;
+    double _currentBAC;
+    boolean _isMale;
+    double _weight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,28 @@ public class drinking_class extends AppCompatActivity {
         }
     }
     public void letsStart(View v){
+        //FIXME
       //  _startTime
+    }
+
+    public void currentBAC(){
+        double constant;
+        if (_isMale) {
+            constant = 0.68;
+        } else {
+            constant = 0.55;
+        }
+        int alcInGrams = _drinks * 14;
+        double bodyWeight = _weight / 0.0022046;
+        double bacPercent = (alcInGrams / (bodyWeight * constant)) * 100;
+        double accurateBAC = bacPercent - (hoursSinceFirstDrink());
+        _currentBAC = accurateBAC;
+    }
+
+
+
+    private double hoursSinceFirstDrink(){
+        //FIXME
+        return 0;
     }
 }

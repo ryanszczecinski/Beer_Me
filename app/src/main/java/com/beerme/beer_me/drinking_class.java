@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -18,7 +19,7 @@ import java.util.TimerTask;
  */
 
 public class drinking_class extends AppCompatActivity {
-
+    int _easterEgg;
     TextView _textView;
     int _drinks;
     TextView _timer;
@@ -42,6 +43,8 @@ public class drinking_class extends AppCompatActivity {
          _timer = (TextView) findViewById(R.id.textView2);
         View b = (Button) findViewById(R.id.button7);
         b.setVisibility(View.INVISIBLE);
+        ImageView iv = (ImageView) findViewById(R.id.imageView2);
+        iv.setVisibility(View.INVISIBLE);
 
 
     }
@@ -55,10 +58,11 @@ public class drinking_class extends AppCompatActivity {
             double x = Math.floor(_currentBAC*1000)/1000;
             bac.setText(x + "");
         }
-
+        _easterEgg = 0;
 
     }
     public void crap(View v){
+        _easterEgg+=1;
         if(_started) {
             if (_drinks > 0) {
                 _drinks -= 1;
@@ -68,6 +72,10 @@ public class drinking_class extends AppCompatActivity {
                 double x = Math.floor(_currentBAC*1000)/1000;
                 bac.setText(x + "");
             }
+        }
+        if(_easterEgg>=2){
+            ImageView iv = (ImageView) findViewById(R.id.imageView2);
+            iv.setVisibility(View.VISIBLE);
         }
     }
     public void letsStart(View v){

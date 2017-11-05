@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Button b;
     EditText name;
     EditText weight;
-    String nameString;
+    String nameString = "";
     String weightString;
     CheckBox checkBoxMale;
     CheckBox checkBoxFemale;
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         checkBoxMale = ((CheckBox) findViewById(R.id.checkBoxMale));
         checkBoxFemale = ((CheckBox) findViewById(R.id.checkBoxFemale));
 
+
+
         checkBoxMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,9 +78,21 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nameString = name.getText().toString();
-                weightString = weight.getText().toString();
-                int weightInteger = Integer.parseInt(weightString);
+                int weightInteger = 0;
+                if(name.getText().toString().equals("")){
+                    nameString = "";
+                }
+                else {
+                    nameString = name.getText().toString();
+                }
+                if(weight.getText().toString().equals("")){
+                    weightString = "0";
+                }
+                else {
+                        weightString = weight.getText().toString();
+                }
+
+                weightInteger = Integer.parseInt(weightString);
                 drinking_class._weight = weightInteger;
                 boolean maleChecked = checkBoxMale.isChecked();
                 drinking_class._isMale = maleChecked;

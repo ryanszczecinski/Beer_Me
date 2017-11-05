@@ -3,17 +3,17 @@ hackathon
 
 This is an app that will track your drinking as you progress through the night. 
 
-Initally we wanted to track your BAC using physical characteristics which is completed
+This app was designed to track your BAC using physical characteristics.
 
-going foreward we want a notification like spottify to make interfacing with the app easier
+We also implemented a notification system allowing you to view your current BAC and beers consumed from your lockscreen.
 
-we also plan on having more in-depth drinking analytics
-
-
+A "high-score" tab has been implemented, which is the basis of the more in-depth drinking analytics we plan to formulate.
 
 
-to use, enter weight and male/female and then press enter. 
 
-then press start drinking to intitalize a drinking session
 
-use the buttons on the bottom to toggle how many beers you had
+To use this app, enter your name, weight, and gender and press the enter button. 
+
+Then press start drinking to intitalize a drinking session.
+
+Use the buttons on the bottom to toggle how many beers you have consumed.
